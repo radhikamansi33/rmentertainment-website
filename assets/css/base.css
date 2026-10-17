@@ -38,6 +38,8 @@ body {
   color: var(--ink);
   font: 400 1.0625rem/1.75 var(--font-sans);
   overflow-x: hidden;
+  /* Long words and file names wrap instead of widening the page on small phones */
+  overflow-wrap: break-word;
 }
 
 img,

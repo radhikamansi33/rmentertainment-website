@@ -1,24 +1,11 @@
 /**
- * Enquiry: contact links, service preselection, validation, and honest submission feedback.
+ * Enquiry: service preselection, validation, and honest submission feedback.
  */
 (function () {
   var $ = RM.$, $$ = RM.$$;
   var form = $("#enquiry-form");
 
-  /* ---- Contact links appear only when real details are supplied ---- */
-  var links = $("#contact-links");
-  if (links) {
-    var c = RM.config.contact;
-    var items = [
-      ["WhatsApp", c.whatsapp],
-      ["Phone", c.phone && "tel:" + c.phone],
-      ["Email", c.email && "mailto:" + c.email],
-      ["Instagram", c.instagram]
-    ].filter(function (item) { return item[1]; });
-    links.innerHTML = items.map(function (i) {
-      return '<a href="' + i[1] + '">' + i[0] + "</a>";
-    }).join(" &nbsp; ");
-  }
+  var team = RM.config.team || [];
 
   if (!form) { return; }
   var submitting = false;
@@ -88,19 +75,18 @@
     return data;
   }
 
-  /* Optional follow-up: opens WhatsApp with a ready message. The visitor presses send. */
-  function whatsappLink(data) {
-    var lines = [
+  /* Optional follow-up after an email enquiry: a short WhatsApp message. The visitor presses send. */
+  function followUpText(data) {
+    return [
       "Hello R & M Entertainment Designers, I just sent an enquiry.",
       "Name: " + data.name,
       "Services: " + data.services.join(", "),
       "Event date: " + (data.date || "Not decided")
-    ];
-    return "https://wa.me/" + RM.config.whatsappNumber + "?text=" + encodeURIComponent(lines.join("\n"));
+    ].join("\n");
   }
 
-  /* Full enquiry as a WhatsApp message to the business number. */
-  function whatsappEnquiryLink(data) {
+  /* Full enquiry written out as a WhatsApp message. */
+  function enquiryText(data) {
     var lines = ["Hello R & M Entertainment Designers, I'd like to enquire.", "", "Name: " + data.name];
     if (data.phone) { lines.push("Phone: " + data.phone); }
     if (data.email) { lines.push("Email: " + data.email); }
@@ -111,15 +97,40 @@
     if (data.count) { lines.push("Participants: " + data.count); }
     if (data.budget) { lines.push("Budget: " + data.budget); }
     if (data.message) { lines.push("", data.message); }
-    return "https://wa.me/" + RM.config.whatsappNumber + "?text=" + encodeURIComponent(lines.join("\n"));
+    return lines.join("\n");
   }
 
-  var viaWhatsApp = RM.config.sendVia === "whatsapp" && RM.config.whatsappNumber;
-  if (viaWhatsApp) { $("#submit-button").textContent = "Send Enquiry on WhatsApp"; }
+  /* After a successful send: show the confirmation briefly, then reload a fresh, empty page. */
+  var RELOAD_DELAY = 4000;
+  function reloadSoon(result) {
+    result.insertAdjacentHTML("beforeend", '<p class="meta">This page will refresh in a few seconds.</p>');
+    setTimeout(function () { window.location.reload(); }, RELOAD_DELAY);
+  }
+
+  /* Opens WhatsApp to one founder (inside the visitor's click, so it is not blocked as a pop-up). */
+  function sendWhatsApp(person, data, result) {
+    var link = RM.whatsappLink(person, enquiryText(data));
+    var chat = window.open(link, "_blank");
+    if (chat) { chat.opener = null; }
+    var first = RM.escape(person.name.split(" ")[0]);
+    result.className = "form-result";
+    result.innerHTML =
+      (chat
+        ? "<strong>WhatsApp has opened with your enquiry to " + first + ".</strong> Press send in WhatsApp to deliver it."
+        : "<strong>Your browser stopped WhatsApp from opening.</strong> Press “Open WhatsApp” below, then press send.") +
+      " This is not a booking confirmation." +
+      '<p><a class="btn btn--primary" href="' + link + '" target="_blank" rel="noopener">' + (chat ? "Open WhatsApp again" : "Open WhatsApp") + "</a>" +
+      ' <a class="btn btn--outline" href="tel:' + person.phone + '">Call ' + first + "</a></p>";
+    result.scrollIntoView({ block: "nearest" });
+    // Only reload when WhatsApp really opened; if it was blocked, keep the button above.
+    if (chat) { reloadSoon(result); }
+  }
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     if (submitting) { return; }
+    // Which button was pressed; Enter in a field counts as WhatsApp, the first button.
+    var viaWhatsApp = !(event.submitter && event.submitter.dataset.via === "email") && team.length;
 
     $$(".field__error", form).forEach(function (x) { x.textContent = ""; });
     $$("[aria-invalid]", form).forEach(function (x) { x.removeAttribute("aria-invalid"); });
@@ -131,17 +142,22 @@
     var button = $("#submit-button");
     var result = $("#form-result");
 
-    // WhatsApp: open the chat now (still inside the click, so it is not blocked as a pop-up).
+    // WhatsApp: one founder goes straight to WhatsApp; with several, the visitor chooses whom.
     if (viaWhatsApp) {
-      var link = whatsappEnquiryLink(payload());
-      window.open(link, "_blank", "noopener");
-      var c = RM.config.contact;
+      var details = payload();
+      if (team.length === 1) { sendWhatsApp(team[0], details, result); return; }
       result.className = "form-result";
-      result.innerHTML =
-        "<strong>WhatsApp has opened with your enquiry.</strong> Press send in WhatsApp to deliver it. This is not a booking confirmation." +
-        '<p><a class="btn btn--primary" href="' + link + '" target="_blank" rel="noopener">Open WhatsApp again</a>' +
-        (c.phone ? ' <a class="btn btn--outline" href="tel:' + c.phone + '">Call ' + RM.escape(c.phone) + "</a>" : "") + "</p>";
+      result.innerHTML = "<strong>Who would you like to send your enquiry to?</strong>" +
+        '<div class="btn-row">' + team.map(function (p, i) {
+          return '<button class="btn btn--primary" type="button" data-person="' + i + '">Send to ' + RM.escape(p.name) + "</button>";
+        }).join("") + "</div>";
+      $$("[data-person]", result).forEach(function (choice) {
+        choice.addEventListener("click", function () {
+          sendWhatsApp(team[Number(choice.dataset.person)], details, result);
+        });
+      });
       result.scrollIntoView({ block: "nearest" });
+      $("[data-person]", result).focus();
       return;
     }
     submitting = true;
@@ -171,8 +187,12 @@
         result.className = "form-result";
         result.innerHTML =
           "<strong>Enquiry received.</strong> Thank you. We\u2019ll get in touch using your preferred method. This is not a booking confirmation." +
-          '<p><a class="btn btn--outline" href="' + whatsappLink(data) + '" target="_blank" rel="noopener">Also message us on WhatsApp</a></p>';
+          '<p class="btn-row">' + team.map(function (p) {
+            return '<a class="btn btn--outline" href="' + RM.whatsappLink(p, followUpText(data)) + '" target="_blank" rel="noopener">WhatsApp ' +
+              RM.escape(p.name.split(" ")[0]) + "</a>";
+          }).join("") + "</p>";
         form.reset();
+        reloadSoon(result);
       })
       .catch(function (error) {
         result.className = "form-result form-result--warn";
@@ -186,7 +206,7 @@
       .then(function () {
         submitting = false;
         button.disabled = false;
-        button.textContent = "Send Enquiry";
+        button.textContent = "Send via Email";
         result.scrollIntoView({ block: "nearest" });
       });
   });
