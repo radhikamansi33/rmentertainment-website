@@ -1,0 +1,28 @@
+# Rehearsals: video upload guide
+
+Upload **six videos** into this folder, one per slot below. These appear on the Rehearsals experience page (experiences/rehearsals/) and on Our Work. Technical Rehearsals has its own folder.
+
+| Slot | File name | What to upload | Poster image | Done |
+|------|-----------|----------------|--------------|------|
+| 1 | `video-1.mp4` | Group rehearsal | `posters/video-1.jpg` | [x] |
+| 2 | `video-2.mp4` | Ballroom practice | `posters/video-2.jpg` | [x] |
+| 3 | `video-3.mp4` | Family rehearsal | `posters/video-3.jpg` | [x] |
+| 4 | `video-4.mp4` | Home practice session | `posters/video-4.jpg` | [x] |
+| 5 | `video-5.mp4` | Groom and friends practice | `posters/video-5.jpg` | [x] |
+| 6 | `video-6.mp4` | Guests learning a routine | `posters/video-6.jpg` | [x] |
+
+## Video requirements
+- Format: MP4 (H.264 video, AAC audio)
+- Shape: landscape 16:9, 1080p at most
+- Size: aim for under 25 MB each so phones load quickly
+- Name: exactly `video-1.mp4` to `video-6.mp4`
+- Poster image (first frame or best still): `posters/video-1.jpg` to `posters/video-6.jpg`
+- Only genuine R & M footage. Never competitor or stock performances.
+- Keep original full-quality files outside this repository.
+
+## After uploading
+1. Open `assets/data/media-manifest.js`.
+2. Find `"rehearsals"` under `sections`.
+3. Change `"live": false` to `"live": true` for each slot you uploaded.
+
+Slots left on `false` show a tidy "coming soon" tile on the website.

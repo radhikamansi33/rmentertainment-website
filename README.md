@@ -7,7 +7,7 @@ A static website (HTML, CSS, JavaScript). No build step and no dependencies.
 index.html                 Home
 about/  founders/  our-work/  contact/
 experiences/               Overview
-experiences/<service>/     Seven service pages
+experiences/<service>/     Eight service pages
 owner-checklist/           Launch checklist (hidden from search)
 404.html  sitemap.xml  robots.txt
 

@@ -11,8 +11,19 @@
   var heroSlot = $("#hero-media");
   var hero = RM.media.hero || {};
 
+  // Cover: full-width banner above the hero text; the side visual is removed.
+  if (heroSlot && hero.type === "cover" && hero.src) {
+    var heroSection = heroSlot.closest(".hero");
+    heroSection.insertAdjacentHTML("beforebegin",
+      '<div class="cover"><img src="' + RM.base + hero.src + '" alt="' + esc(hero.alt || "") + '"></div>');
+    heroSlot.closest(".hero__visual").remove();
+    heroSection.classList.add("hero--cover");
+  }
+
   if (heroSlot && hero.type === "image" && hero.src) {
-    heroSlot.innerHTML = '<img src="' + RM.base + hero.src + '" alt="Performers at a wedding celebration">';
+    heroSlot.innerHTML = '<img src="' + RM.base + hero.src + '" alt="' + esc(hero.alt || "Performers at a wedding celebration") + '">';
+    // A photo is shown whole, without the arch frame cropping it.
+    heroSlot.closest(".hero__visual").classList.add("hero__visual--photo");
   }
 
   if (heroSlot && hero.type === "video" && hero.src) {
@@ -49,14 +60,30 @@
       '<figcaption><strong>Video ' + number + ' (coming soon)</strong><span class="meta">' + esc(label) + "</span></figcaption></figure>";
   }
 
+  // data-videos="all" lists every section; data-live-only skips "coming soon" slots.
   $$("[data-videos]").forEach(function (grid) {
     var html = "";
-    grid.dataset.videos.split(",").forEach(function (key) {
+    var keys = grid.dataset.videos === "all" ? Object.keys(RM.media.sections) : grid.dataset.videos.split(",");
+    var liveOnly = grid.hasAttribute("data-live-only");
+    var shown = [];
+    keys.forEach(function (key) {
       (RM.media.sections[key] || []).forEach(function (slot, index) {
+        if (liveOnly && !slot.live) { return; }
+        if (shown.indexOf(key) === -1) { shown.push(key); }
         html += tileHtml(key, index, slot);
       });
     });
-    grid.innerHTML = html;
+    grid.innerHTML = html || '<p class="note">Films appear here as they are added.</p>';
+
+    var filters = $(".filters[data-auto]", grid.parentNode);
+    if (filters) {
+      filters.hidden = shown.length < 2;
+      filters.innerHTML = '<button type="button" aria-pressed="true" data-filter="all">All</button>' +
+        shown.map(function (key) {
+          return '<button type="button" aria-pressed="false" data-filter="' + key + '">' +
+            esc(RM.config.sectionLabels[key] || key) + "</button>";
+        }).join("");
+    }
 
     grid.addEventListener("click", function (event) {
       var button = event.target.closest("button[data-key]");
@@ -69,6 +96,22 @@
       dialog.showModal();
       player.play().catch(function () {});
     });
+  });
+
+  /* ---- Photo gallery: data-photos="" shows all, data-photos="key" one section.
+     The section stays hidden until it has photos. ---- */
+  $$("[data-photos]").forEach(function (grid) {
+    var key = grid.dataset.photos;
+    var photos = (RM.media.photos || []).filter(function (photo) {
+      return !key || photo.section === key;
+    });
+    if (!photos.length) { return; }
+    grid.innerHTML = photos.map(function (photo) {
+      var src = RM.base + photo.src;
+      return '<a class="photo-tile" href="' + src + '" target="_blank" rel="noopener">' +
+        '<img src="' + src + '" alt="' + esc(photo.alt || "") + '" loading="lazy"></a>';
+    }).join("");
+    grid.closest("section").hidden = false;
   });
 
   /* ---- Dialog: Escape closes, focus returns to the trigger ---- */
@@ -93,7 +136,8 @@
   filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       filterButtons.forEach(function (b) { b.setAttribute("aria-pressed", b === button); });
-      $$(".video-tile").forEach(function (tile) {
+      // Only the grid next to the filters; other sections on the page stay visible.
+      $$(".video-tile", button.closest(".wrap")).forEach(function (tile) {
         tile.hidden = !(button.dataset.filter === "all" || tile.dataset.key === button.dataset.filter);
       });
     });

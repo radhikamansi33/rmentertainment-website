@@ -47,6 +47,7 @@
                 <a href="../experiences/special-artists/">Special Artists</a>
                 <a href="../experiences/virtual-sessions/">Virtual Sessions</a>
                 <a href="../experiences/technical-rehearsals/">Technical Rehearsals</a>
+                <a href="../experiences/rehearsals/">Rehearsals</a>
               </div>
             </li>
             <li><a class="nav__link" href="../our-work/" aria-current="page">Our Work</a></li>
@@ -70,6 +71,7 @@
           <a href="../experiences/special-artists/">Special Artists</a>
           <a href="../experiences/virtual-sessions/">Virtual Sessions</a>
           <a href="../experiences/technical-rehearsals/">Technical Rehearsals</a>
+          <a href="../experiences/rehearsals/">Rehearsals</a>
         </div>
         <a href="../our-work/">Our Work</a>
         <a href="../contact/">Contact</a>
@@ -82,24 +84,24 @@
     <div class="page-hero">
       <div class="wrap">
         <h1>See the celebration come to life.</h1>
-        <p class="lead">Six film slots in every category. Filter by celebration type.</p>
+        <p class="lead">Every film and photograph we add, in one place. Filter by celebration type.</p>
       </div>
     </div>
 
     <section class="section section--alt">
       <div class="wrap" data-reveal>
-        <h2>Selected films.</h2>
+        <h2>All films.</h2>
         <p>Real footage appears here as it is added.</p>
-        <div class="filters" role="group" aria-label="Filter videos">
-          <button type="button" aria-pressed="true" data-filter="all">All</button>
-          <button type="button" aria-pressed="false" data-filter="sangeet-entry">Sangeet</button>
-          <button type="button" aria-pressed="false" data-filter="varmala-entry">Varmala</button>
-          <button type="button" aria-pressed="false" data-filter="haldi-entry">Haldi</button>
-          <button type="button" aria-pressed="false" data-filter="choreography">Choreography</button>
-          <button type="button" aria-pressed="false" data-filter="special-artists">Special Artists</button>
-          <button type="button" aria-pressed="false" data-filter="behind-the-scenes">Behind the Scenes</button>
-        </div>
-        <div class="video-grid" data-videos="sangeet-entry,varmala-entry,haldi-entry,choreography,special-artists,behind-the-scenes"></div>
+        <!-- Filter buttons are built from the categories that have videos -->
+        <div class="filters" role="group" aria-label="Filter videos" data-auto></div>
+        <div class="video-grid" data-videos="all" data-live-only></div>
+      </div>
+    </section>
+
+    <section class="section" hidden>
+      <div class="wrap" data-reveal>
+        <h2>Photographs.</h2>
+        <div class="photo-grid" data-photos></div>
       </div>
     </section>
 
@@ -129,6 +131,7 @@
             <li><a href="../experiences/special-artists/">Special Artists</a></li>
             <li><a href="../experiences/virtual-sessions/">Virtual Sessions</a></li>
             <li><a href="../experiences/technical-rehearsals/">Technical Rehearsals</a></li>
+            <li><a href="../experiences/rehearsals/">Rehearsals</a></li>
           </ul>
         </div>
         <div>

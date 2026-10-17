@@ -60,17 +60,6 @@
   overflow: hidden;
 }
 
-.page-hero::after {
-  content: "";
-  position: absolute;
-  right: max(1rem,calc(50% - 590px));
-  bottom: -30px;
-  width: 150px;
-  height: 225px;
-  background: url("../images/motif-feather.svg") center/contain no-repeat;
-  opacity: .18;
-}
-
 .breadcrumb {
   margin-bottom: 1rem;
   font-size: .95rem;

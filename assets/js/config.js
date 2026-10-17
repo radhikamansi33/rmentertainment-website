@@ -34,6 +34,7 @@ RM.config = {
     "choreography": "Choreography",
     "special-artists": "Special Artists",
     "virtual-sessions": "Virtual Sessions",
-    "technical-rehearsals": "Technical Rehearsals"
+    "technical-rehearsals": "Technical Rehearsals",
+    "rehearsals": "Rehearsals"
   }
 };

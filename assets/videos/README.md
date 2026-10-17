@@ -12,11 +12,12 @@ One folder per website section. Each folder has an `UPLOAD-GUIDE.md` that says e
 | Varmala Entry | [`assets/videos/varmala-entry/`](varmala-entry/UPLOAD-GUIDE.md) | 6 |
 | Haldi Entry | [`assets/videos/haldi-entry/`](haldi-entry/UPLOAD-GUIDE.md) | 6 |
 | Choreography | [`assets/videos/choreography/`](choreography/UPLOAD-GUIDE.md) | 6 |
-| Special Artists | [`assets/videos/special-artists/`](special-artists/UPLOAD-GUIDE.md) | 6 |
-| Virtual Sessions | [`assets/videos/virtual-sessions/`](virtual-sessions/UPLOAD-GUIDE.md) | 6 |
+| Special Artists | [`assets/videos/special-artists/`](special-artists/UPLOAD-GUIDE.md) | 3 |
+| Virtual Sessions | [`assets/videos/virtual-sessions/`](virtual-sessions/UPLOAD-GUIDE.md) | 4 |
 | Technical Rehearsals | [`assets/videos/technical-rehearsals/`](technical-rehearsals/UPLOAD-GUIDE.md) | 6 |
+| Rehearsals | [`assets/videos/rehearsals/`](rehearsals/UPLOAD-GUIDE.md) | 6 |
 
-**Total: 66 videos** (6 per section).
+**Total: 67 videos** (6 per section, 4 for Virtual Sessions, 3 for Special Artists).
 
 ## Video requirements
 - Format: MP4 (H.264 video, AAC audio)
