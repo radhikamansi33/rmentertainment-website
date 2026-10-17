@@ -1,13 +1,13 @@
-# Haldi Entry: video upload guide
+# Haldi & Mehndi Entry: video upload guide
 
-Upload **six videos** into this folder, one per slot below.
+This section shows **four videos** (slots 1 to 4 below) for Haldi and Mehndi entries. To add more, add a slot for each in `assets/data/media-manifest.js`.
 
 | Slot | File name | What to upload | Poster image | Done |
 |------|-----------|----------------|--------------|------|
-| 1 | `video-1.mp4` | Couple entry | `posters/video-1.jpg` | [ ] |
-| 2 | `video-2.mp4` | Family entry | `posters/video-2.jpg` | [ ] |
-| 3 | `video-3.mp4` | Lively group choreography | `posters/video-3.jpg` | [ ] |
-| 4 | `video-4.mp4` | Folk-inspired performance | `posters/video-4.jpg` | [ ] |
+| 1 | `video-1.mp4` | Couple entry | `posters/video-1.jpg` | [x] |
+| 2 | `video-2.mp4` | Family entry | `posters/video-2.jpg` | [x] |
+| 3 | `video-3.mp4` | Lively group choreography | `posters/video-3.jpg` | [x] |
+| 4 | `video-4.mp4` | Folk-inspired performance | `posters/video-4.jpg` | [x] |
 | 5 | `video-5.mp4` | Guest participation | `posters/video-5.jpg` | [ ] |
 | 6 | `video-6.mp4` | Daytime setting | `posters/video-6.jpg` | [ ] |
 

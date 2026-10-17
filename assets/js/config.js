@@ -30,7 +30,7 @@ RM.config = {
     "behind-the-scenes": "Behind the Scenes",
     "sangeet-entry": "Sangeet Entry",
     "varmala-entry": "Varmala Entry",
-    "haldi-entry": "Haldi Entry",
+    "haldi-entry": "Haldi & Mehndi Entry",
     "choreography": "Choreography",
     "special-artists": "Special Artists",
     "virtual-sessions": "Virtual Sessions",
