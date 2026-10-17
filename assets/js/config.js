@@ -4,6 +4,10 @@
 window.RM = window.RM || {};
 
 RM.config = {
+  // How the Send Enquiry button delivers: "whatsapp" opens WhatsApp with the enquiry
+  // written out, ready to send to whatsappNumber; "email" uses formEndpoint below.
+  sendVia: "whatsapp",
+
   // Enquiries are delivered by email through FormSubmit (one-time activation needed,
   // see README). If this is empty, the form tells visitors honestly that nothing was sent.
   formEndpoint: "https://formsubmit.co/ajax/radhikamansi33@gmail.com",

@@ -319,8 +319,13 @@
   font-size: 1rem;
 }
 
-.founders-section {
+.founders-section,
+.section--tight-top {
   padding-top: 1.1rem;
+}
+
+#contact-links:not(:empty) {
+  margin-bottom: 1.4rem;
 }
 
 .founder-grid {
