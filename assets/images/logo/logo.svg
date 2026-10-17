@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" role="img" aria-label="R and M monogram placeholder">
+  <path d="M6 144V60C6 28 30 6 60 6s54 22 54 54v84z" fill="#123F42" stroke="#A78750" stroke-width="3"/>
+  <path d="M16 134V62C16 34 36 16 60 16s44 18 44 46v72z" fill="none" stroke="#A78750" stroke-width="1"/>
+  <text x="60" y="92" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FAF6EE">R&amp;M</text>
+</svg>
