@@ -14,6 +14,11 @@ RM.$$ = function (selector, root) {
   return Array.prototype.slice.call((root || document).querySelectorAll(selector));
 };
 
+/* WhatsApp chat link to one founder, with an optional message already typed. */
+RM.whatsappLink = function (person, text) {
+  return "https://wa.me/" + person.whatsapp + (text ? "?text=" + encodeURIComponent(text) : "");
+};
+
 RM.escape = function (text) {
   var map = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
   return String(text).replace(/[&<>"]/g, function (c) {
