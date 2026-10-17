@@ -1,0 +1,137 @@
+/* base.css: Tokens, reset, typography, accessibility */
+
+/* ==== Design tokens ==== */
+:root {
+  --ivory: #FAF6EE;
+  --parchment: #EEE5D7;
+  --teal: #123F42;
+  --teal-deep: #0B2D30;
+  --gold: #A78750;
+  --wine: #682F40;
+  --ink: #292623;
+  --muted: #5A554F;
+  --danger: #8F1D2C;
+  --font-serif: "Cormorant Garamond",Georgia,serif;
+  --font-sans: Manrope,system-ui,sans-serif;
+  --max-width: 1180px;
+  --radius: 6px;
+  --shadow: 0 18px 40px rgba(41,38,35,.12);
+  --jaali: radial-gradient(circle at 50% 0,transparent 0 10px,rgba(167,135,80,.45) 10px 11px,transparent 11px);
+}
+
+/* ==== Reset ==== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font: 400 1.0625rem/1.75 var(--font-sans);
+  overflow-x: hidden;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--teal);
+}
+
+/* ==== Typography ==== */
+h1,
+h2,
+h3 {
+  margin: 0 0 .5em;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.01em;
+}
+
+h1 {
+  font-size: clamp(2.6rem,7vw,5rem);
+}
+
+h2 {
+  font-size: clamp(2.1rem,4.6vw,3.3rem);
+}
+
+h3 {
+  font-size: 1.65rem;
+}
+
+p {
+  max-width: 62ch;
+  margin: 0 0 1em;
+}
+
+.lead {
+  max-width: 46ch;
+  font-size: 1.2rem;
+}
+
+.eyebrow {
+  margin: 0 0 .6rem;
+  color: var(--wine);
+  font: 600 1.1rem var(--font-serif);
+  letter-spacing: .02em;
+}
+
+.note {
+  max-width: 62ch;
+  padding: .3rem 0 .3rem 1rem;
+  border-left: 2px solid var(--gold);
+  font-size: .97rem;
+}
+
+.list {
+  max-width: 56ch;
+  padding-left: 1.2rem;
+}
+
+.list li {
+  margin-bottom: .5rem;
+}
+
+/* ==== Accessibility ==== */
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: -999px;
+  z-index: 100;
+  padding: .6rem 1rem;
+  background: var(--teal);
+  color: var(--ivory);
+}
+
+.skip-link:focus {
+  left: 8px;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * {
+    animation: none!important;
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+
+}

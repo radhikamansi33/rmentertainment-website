@@ -3,89 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
   <title>R &amp; M Entertainment Designers | Wedding Entries &amp; Choreography</title>
   <meta name="description" content="Explore conceptual wedding entries, choreography, live dance artists, virtual sessions, and technical rehearsals with R &amp; M Entertainment Designers.">
-
+  <meta property="og:title" content="R &amp; M Entertainment Designers | Wedding Entries &amp; Choreography">
+  <meta property="og:description" content="Explore conceptual wedding entries, choreography, live dance artists, virtual sessions, and technical rehearsals with R &amp; M Entertainment Designers.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#123F42">
+  <link rel="icon" href="assets/images/logo/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "R & M Entertainment Designers"
-    }
-  </script>
-
-  <style>
-    #hdr .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    #hdr .brand-logo {
-      display: block;
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    #hdr .brand-name {
-      min-width: 0;
-    }
-
-    @media (max-width: 600px) {
-      #hdr .brand-logo {
-        width: 42px;
-        height: 42px;
-      }
-
-      #hdr .brand-name {
-        max-width: 190px;
-        font-size: 16px;
-        line-height: 1.2;
-      }
-    }
-  </style>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "R & M Entertainment Designers"}</script>
 </head>
-
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header id="hdr">
+  <header class="site-header" id="site-header">
     <div class="wrap">
-      <div class="hb">
-        <a class="brand" href="./"
-           aria-label="R &amp; M Entertainment Designers, home">
-          <img
-            class="brand-logo"
-            src="assets/images/logo.png"
-            alt=""
-            width="56"
-            height="56"
-            onerror="this.style.display='none'"
-          >
-          <span class="brand-name">R &amp; M Entertainment Designers</span>
+      <div class="site-header__bar">
+        <a class="brand" href="" aria-label="R &amp; M Entertainment Designers, home">
+          <img class="brand__logo" id="brand-logo" alt="" hidden>
+          <span class="brand__name">R &amp; M Entertainment Designers</span>
         </a>
-
-        <nav class="dsk" aria-label="Main">
-          <ul id="dnav">
-            <li><a href="./" aria-current="page">Home</a></li>
-            <li><a href="about/">About</a></li>
-            <li><a href="founders/">Founders</a></li>
-
-            <li class="has">
-              <button class="dd" id="ddb" aria-expanded="false" aria-controls="ddm">
-                Experiences ▾
-              </button>
-
-              <div class="menu" id="ddm">
+        <nav class="nav nav--desktop" aria-label="Main">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="" aria-current="page">Home</a></li>
+            <li><a class="nav__link" href="about/">About</a></li>
+            <li><a class="nav__link" href="founders/">Founders</a></li>
+            <li class="nav__item nav__item--dropdown">
+              <button class="nav__link" id="dropdown-button" aria-expanded="false" aria-controls="dropdown-menu">Experiences &#9662;</button>
+              <div class="nav__menu" id="dropdown-menu">
                 <a href="experiences/">All experiences</a>
                 <a href="experiences/sangeet-entry/">Sangeet Entry</a>
                 <a href="experiences/varmala-entry/">Varmala Entry</a>
@@ -96,29 +49,19 @@
                 <a href="experiences/technical-rehearsals/">Technical Rehearsals</a>
               </div>
             </li>
-
-            <li><a href="our-work/">Our Work</a></li>
-            <li><a href="contact/">Contact</a></li>
+            <li><a class="nav__link" href="our-work/">Our Work</a></li>
+            <li><a class="nav__link" href="contact/">Contact</a></li>
           </ul>
         </nav>
-
-        <a class="btn p hdrcta" href="contact/">Plan Your Celebration</a>
-
-        <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav">
-          Menu
-        </button>
+        <a class="btn btn--primary site-header__cta" href="contact/">Plan Your Celebration</a>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
       </div>
-
-      <nav class="mnav" id="mnav" aria-label="Mobile">
-        <a href="./">Home</a>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+        <a href="">Home</a>
         <a href="about/">About</a>
         <a href="founders/">Founders</a>
-
-        <button id="mxb" aria-expanded="false" aria-controls="msub">
-          Experiences +
-        </button>
-
-        <div class="sub" id="msub">
+        <button id="mobile-experiences" aria-expanded="false" aria-controls="mobile-sub">Experiences +</button>
+        <div class="mobile-nav__sub" id="mobile-sub">
           <a href="experiences/">All experiences</a>
           <a href="experiences/sangeet-entry/">Sangeet Entry</a>
           <a href="experiences/varmala-entry/">Varmala Entry</a>
@@ -128,162 +71,140 @@
           <a href="experiences/virtual-sessions/">Virtual Sessions</a>
           <a href="experiences/technical-rehearsals/">Technical Rehearsals</a>
         </div>
-
         <a href="our-work/">Our Work</a>
         <a href="contact/">Contact</a>
-        <a class="btn p" href="contact/">Plan Your Celebration</a>
+        <a class="btn btn--primary" href="contact/">Plan Your Celebration</a>
       </nav>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
     <section class="hero">
-      <div class="wrap hg">
-        <div>
-          <p class="brandline">R &amp; M Entertainment Designers</p>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="hero__brand">R &amp; M Entertainment Designers</p>
           <h1>Your story. A spectacular entrance.</h1>
-
-          <p class="lead">
-            Conceptual wedding entries, expressive choreography, and live
-            performances designed around you.
-          </p>
-
-          <div class="row">
-            <a class="btn p" href="experiences/">Explore Our Experiences</a>
-            <a class="btn s" href="contact/">Plan Your Celebration</a>
-            <a class="btn s" href="#watch">Watch Our Work</a>
+          <p class="lead">Conceptual wedding entries, expressive choreography, and live performances designed around you.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="experiences/">Explore Our Experiences</a>
+            <a class="btn btn--outline" href="contact/">Plan Your Celebration</a>
+            <a class="btn btn--outline" href="#watch">Watch Our Work</a>
           </div>
+          <ul class="hero__tags" aria-label="Celebrations we design for">
+            <li>Sangeet</li>
+            <li>Varmala</li>
+            <li>Haldi</li>
+            <li>Choreography</li>
+          </ul>
         </div>
-
-        <div class="arch">
-          <div class="in" id="heroMedia">
-            <div class="motif" aria-hidden="true"></div>
+        <div class="hero__visual">
+          <div class="arch arch--back" aria-hidden="true"></div>
+          <div class="arch arch--front">
+            <div class="arch__inner" id="hero-media">
+              <div class="arch__motif" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="alt">
-      <div class="wrap">
-        <hr class="rule">
+    <section class="section section--alt">
+      <div class="wrap" data-reveal>
+        <div class="divider" aria-hidden="true"></div>
         <h2>We design the moments everyone gathers to watch.</h2>
-        <p>
-          R &amp; M Entertainment Designers brings imagination, movement, and
-          storytelling to wedding celebrations. From a personal couple entry to
-          a vibrant ensemble performance, we shape entertainment around your
-          occasion, your personality, and the atmosphere you want to create.
-        </p>
+        <p>R &amp; M Entertainment Designers brings imagination, movement, and storytelling to wedding celebrations. From a personal couple entry to a vibrant ensemble performance, we shape entertainment around your occasion, your personality, and the atmosphere you want to create.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <h3>Conceptual entries</h3>
+            <p>Arrivals for Sangeet, Varmala, and Haldi, designed around your story.</p>
+          </div>
+          <div class="pillar">
+            <h3>Expressive choreography</h3>
+            <p>Movement shaped around your comfort, personality, and celebration.</p>
+          </div>
+          <div class="pillar">
+            <h3>Live performance</h3>
+            <p>Dance artists and performance styles that bring presence to the room.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
+    <section class="section">
+      <div class="wrap" data-reveal>
         <h2>Find the expression for your celebration.</h2>
-
-        <div class="sg">
-          <article class="sc">
-            <div class="ph"><span aria-hidden="true"></span></div>
-            <div class="bd">
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-card__media"><span class="service-card__num" aria-hidden="true">01</span></div>
+            <div class="service-card__body">
               <h3>Sangeet Entry</h3>
-              <p>
-                Conceptual entries that bring personality, music, and movement together.
-              </p>
-              <a class="ex" href="experiences/sangeet-entry/"
-                 aria-label="Explore Experience: Sangeet Entry">
-                Explore Experience
-              </a>
+              <p>Conceptual entries that bring personality, music, and movement together.</p>
+              <a class="service-card__link" href="experiences/sangeet-entry/" aria-label="Explore Experience: Sangeet Entry">Explore Experience</a>
             </div>
           </article>
-
-          <article class="sc">
-            <div class="ph"><span aria-hidden="true"></span></div>
-            <div class="bd">
+          <article class="service-card">
+            <div class="service-card__media"><span class="service-card__num" aria-hidden="true">02</span></div>
+            <div class="service-card__body">
               <h3>Varmala Entry</h3>
               <p>Graceful arrivals shaped around the emotion of your ceremony.</p>
-              <a class="ex" href="experiences/varmala-entry/"
-                 aria-label="Explore Experience: Varmala Entry">
-                Explore Experience
-              </a>
+              <a class="service-card__link" href="experiences/varmala-entry/" aria-label="Explore Experience: Varmala Entry">Explore Experience</a>
             </div>
           </article>
-
-          <article class="sc">
-            <div class="ph"><span aria-hidden="true"></span></div>
-            <div class="bd">
+          <article class="service-card">
+            <div class="service-card__media"><span class="service-card__num" aria-hidden="true">03</span></div>
+            <div class="service-card__body">
               <h3>Haldi Entry</h3>
               <p>Playful, joyful arrivals designed for the mood of your day.</p>
-              <a class="ex" href="experiences/haldi-entry/"
-                 aria-label="Explore Experience: Haldi Entry">
-                Explore Experience
-              </a>
+              <a class="service-card__link" href="experiences/haldi-entry/" aria-label="Explore Experience: Haldi Entry">Explore Experience</a>
             </div>
           </article>
-
-          <article class="sc">
-            <div class="ph"><span aria-hidden="true"></span></div>
-            <div class="bd">
+          <article class="service-card">
+            <div class="service-card__media"><span class="service-card__num" aria-hidden="true">04</span></div>
+            <div class="service-card__body">
               <h3>Choreography</h3>
               <p>Couple dances, solos, and family performances shaped around you.</p>
-              <a class="ex" href="experiences/choreography/"
-                 aria-label="Explore Experience: Choreography">
-                Explore Experience
-              </a>
+              <a class="service-card__link" href="experiences/choreography/" aria-label="Explore Experience: Choreography">Explore Experience</a>
             </div>
           </article>
-
-          <article class="sc">
-            <div class="ph"><span aria-hidden="true"></span></div>
-            <div class="bd">
+          <article class="service-card">
+            <div class="service-card__media"><span class="service-card__num" aria-hidden="true">05</span></div>
+            <div class="service-card__body">
               <h3>Special Artists</h3>
               <p>Live dance artists and performance styles with character.</p>
-              <a class="ex" href="experiences/special-artists/"
-                 aria-label="Explore Experience: Special Artists">
-                Explore Experience
-              </a>
+              <a class="service-card__link" href="experiences/special-artists/" aria-label="Explore Experience: Special Artists">Explore Experience</a>
             </div>
           </article>
-
-          <article class="sc">
-            <div class="ph"><span aria-hidden="true"></span></div>
-            <div class="bd">
+          <article class="service-card">
+            <div class="service-card__media"><span class="service-card__num" aria-hidden="true">06</span></div>
+            <div class="service-card__body">
               <h3>Virtual Sessions</h3>
               <p>Guided online rehearsals for people in different places.</p>
-              <a class="ex" href="experiences/virtual-sessions/"
-                 aria-label="Explore Experience: Virtual Sessions">
-                Explore Experience
-              </a>
+              <a class="service-card__link" href="experiences/virtual-sessions/" aria-label="Explore Experience: Virtual Sessions">Explore Experience</a>
             </div>
           </article>
-
-          <article class="sc">
-            <div class="ph"><span aria-hidden="true"></span></div>
-            <div class="bd">
+          <article class="service-card">
+            <div class="service-card__media"><span class="service-card__num" aria-hidden="true">07</span></div>
+            <div class="service-card__body">
               <h3>Technical Rehearsals</h3>
               <p>Timing, positions, and cues reviewed before the big day.</p>
-              <a class="ex" href="experiences/technical-rehearsals/"
-                 aria-label="Explore Experience: Technical Rehearsals">
-                Explore Experience
-              </a>
+              <a class="service-card__link" href="experiences/technical-rehearsals/" aria-label="Explore Experience: Technical Rehearsals">Explore Experience</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <div id="watch">
-      <section class="alt">
-        <div class="wrap">
-          <h2>Watch our work.</h2>
-          <p>Featured films from our celebrations will appear here.</p>
-          <div class="vgrid" data-videos="home"></div>
-        </div>
-      </section>
-    </div>
+    <section class="section section--alt" id="watch">
+      <div class="wrap" data-reveal>
+        <h2>Watch our work.</h2>
+        <p>Featured films from our celebrations will appear here.</p>
+        <div class="video-grid" data-videos="home"></div>
+      </div>
+    </section>
 
-    <section>
-      <div class="wrap">
+    <section class="section process">
+      <div class="wrap" data-reveal>
         <h2>From the first idea to the final cue.</h2>
-
         <ol class="steps">
           <li>
             <strong>Share your celebration</strong>
@@ -299,9 +220,7 @@
           </li>
           <li>
             <strong>Align the details</strong>
-            <p>
-              Review movement, timing, and relevant venue coordination.
-            </p>
+            <p>Review movement, timing, and relevant venue coordination.</p>
           </li>
           <li>
             <strong>Bring it to life</strong>
@@ -311,24 +230,23 @@
       </div>
     </section>
 
-    <section class="alt">
-      <div class="wrap">
+    <section class="section">
+      <div class="wrap" data-reveal>
         <h2>What guides our work.</h2>
-
-        <div class="vals">
-          <div>
+        <div class="values">
+          <div class="value">
             <h3>Originality</h3>
             <p>Ideas shaped around your celebration.</p>
           </div>
-          <div>
+          <div class="value">
             <h3>Personalisation</h3>
             <p>Your personality at the centre of the concept.</p>
           </div>
-          <div>
+          <div class="value">
             <h3>Artistry</h3>
             <p>Expressive movement and thoughtful visual storytelling.</p>
           </div>
-          <div>
+          <div class="value">
             <h3>Preparation</h3>
             <p>Attention to the details behind the performance.</p>
           </div>
@@ -336,139 +254,103 @@
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
+    <section class="section section--alt">
+      <div class="wrap" data-reveal>
         <h2>Questions, answered.</h2>
-        <p>
-          Requirements, scheduling, inclusions, and availability are confirmed
-          during consultation.
-        </p>
-
+        <p>Requirements, scheduling, inclusions, and availability are confirmed during consultation.</p>
         <div class="faq">
           <details>
             <summary>Can an entry be personalised?</summary>
-            <p>
-              Yes. Every entry is designed around your occasion, personality,
-              and the atmosphere you want.
-            </p>
+            <p>Yes. Every entry is designed around your occasion, personality, and the atmosphere you want.</p>
           </details>
-
           <details>
             <summary>Do we need dance experience?</summary>
-            <p>
-              No. We offer beginner-friendly rehearsal guidance and shape
-              movement around your comfort.
-            </p>
+            <p>No. We offer beginner-friendly rehearsal guidance and shape movement around your comfort.</p>
           </details>
-
           <details>
             <summary>Can family members participate?</summary>
-            <p>
-              Yes. Family and friends can join an entry or performance,
-              depending on the concept we agree.
-            </p>
+            <p>Yes. Family and friends can join an entry or performance, depending on the concept we agree.</p>
           </details>
-
           <details>
             <summary>Are virtual sessions available?</summary>
-            <p>
-              Yes, guided online choreography sessions are available.
-              Formats and schedules are confirmed during consultation.
-            </p>
+            <p>Yes, guided online choreography sessions are available. Formats and schedules are confirmed during consultation.</p>
           </details>
-
           <details>
             <summary>What is a technical rehearsal?</summary>
-            <p>
-              A session that brings timing and venue details together before
-              the celebration: entrances, formations, transitions, and relevant cues.
-            </p>
+            <p>A session that brings timing and venue details together before the celebration: entrances, formations, transitions, and relevant cues.</p>
           </details>
-
           <details>
             <summary>How do we enquire about availability?</summary>
-            <p>
-              Send an enquiry through the form. Availability is confirmed during
-              consultation, and an enquiry does not confirm a booking.
-            </p>
+            <p>Send an enquiry through the form. Availability is confirmed during consultation, and an enquiry does not confirm a booking.</p>
           </details>
-
           <details>
             <summary>How is a quotation prepared?</summary>
-            <p>
-              After we understand your celebration, requirements, scheduling,
-              and inclusions are discussed and confirmed. We don't publish
-              fixed package prices.
-            </p>
+            <p>After we understand your celebration, requirements, scheduling, and inclusions are discussed and confirmed. We don't publish fixed package prices.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="close">
-      <div class="wrap">
+    <section class="section closing">
+      <div class="wrap" data-reveal>
         <h2>Let’s design your moment.</h2>
-        <p>
-          Tell us what you’re celebrating. We’ll explore an entertainment concept
-          that feels like you.
-        </p>
-        <a class="btn p" href="contact/">Enquire About Your Celebration</a>
+        <p>Tell us what you’re celebrating. We’ll explore an entertainment concept that feels like you.</p>
+        <a class="btn btn--light" href="contact/">Enquire About Your Celebration</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap fg">
-      <div>
-        <h3>R &amp; M Entertainment Designers</h3>
-        <p>
-          Conceptual wedding entries, choreography, and live dance performances.
-        </p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <h3>R &amp; M Entertainment Designers</h3>
+          <p>Conceptual wedding entries, choreography, and live dance performances.</p>
+        </div>
+        <div>
+          <h3>Experiences</h3>
+          <ul>
+            <li><a href="experiences/sangeet-entry/">Sangeet Entry</a></li>
+            <li><a href="experiences/varmala-entry/">Varmala Entry</a></li>
+            <li><a href="experiences/haldi-entry/">Haldi Entry</a></li>
+            <li><a href="experiences/choreography/">Choreography</a></li>
+            <li><a href="experiences/special-artists/">Special Artists</a></li>
+            <li><a href="experiences/virtual-sessions/">Virtual Sessions</a></li>
+            <li><a href="experiences/technical-rehearsals/">Technical Rehearsals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="about/">About</a></li>
+            <li><a href="founders/">Founders</a></li>
+            <li><a href="our-work/">Our Work</a></li>
+            <li><a href="contact/">Contact</a></li>
+          </ul>
+        </div>
       </div>
-
-      <div>
-        <h3>Experiences</h3>
-        <ul>
-          <li><a href="experiences/sangeet-entry/">Sangeet Entry</a></li>
-          <li><a href="experiences/varmala-entry/">Varmala Entry</a></li>
-          <li><a href="experiences/haldi-entry/">Haldi Entry</a></li>
-          <li><a href="experiences/choreography/">Choreography</a></li>
-          <li><a href="experiences/special-artists/">Special Artists</a></li>
-          <li><a href="experiences/virtual-sessions/">Virtual Sessions</a></li>
-          <li><a href="experiences/technical-rehearsals/">Technical Rehearsals</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="about/">About</a></li>
-          <li><a href="founders/">Founders</a></li>
-          <li><a href="our-work/">Our Work</a></li>
-          <li><a href="contact/">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="wrap fb">
-      <small>
-        ©️ <span id="yr"></span> R &amp; M Entertainment Designers.
-        An enquiry does not confirm a booking.
-      </small>
+      <p class="footer__legal"><small>&copy; <span id="year"></span> R &amp; M Entertainment Designers. An enquiry does not confirm a booking.</small></p>
     </div>
   </footer>
 
-  <div class="mbar">
-    <a class="btn p" href="contact/">Plan Your Celebration</a>
+  <div class="mobile-bar">
+    <a class="btn btn--primary" href="contact/">Plan Your Celebration</a>
   </div>
 
-  <dialog id="vd" aria-label="Video player">
-    <button class="x" id="vx">Close video</button>
-    <video id="vp" controls playsinline preload="none"></video>
+  <dialog class="video-dialog" id="video-dialog" aria-label="Video player">
+    <button class="video-dialog__close" id="video-close" type="button">Close video</button>
+    <video id="video-player" controls playsinline preload="none"></video>
   </dialog>
 
   <script>window.RM_BASE = "";</script>
-  <script src="assets/js/manifest.js"></script>
+  <script src="assets/data/media-manifest.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/media.js"></script>
+  <script src="assets/js/founders.js"></script>
+  <script src="assets/js/enquiry.js"></script>
+  <script src="assets/js/reveal.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
