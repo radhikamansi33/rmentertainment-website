@@ -28,15 +28,15 @@ window.RM_MEDIA = {
   },
   "founders": [
     {
-      "name": "Radhika Sharma",
+      "name": "Radhika Pancholi",
       "role": "Professional dancer",
-      "bio": "",
+      "bio": "With a decade of experience in dance, Radhika brings an artistic and performance-led approach to entertainment design. She specialises in conceptualising signature entries, developing creative performance concepts, and curating distinctive entertainment experiences for weddings and celebrations. Her focus is on transforming ideas into thoughtfully designed, visually engaging, and memorable experiences.",
       "photo": "assets/images/founders/founder-1.jpg"
     },
     {
       "name": "Mansi Rawat",
       "role": "Professional dancer",
-      "bio": "",
+      "bio": "Mansi is a professional dancer with over five years of experience in the wedding and entertainment industry. With a passion for creativity and storytelling, she specializes in conceptualizing and curating unique wedding experiences, from choreographies and grand entries to personalized entertainment concepts. Her creative vision and attention to detail bring every idea to life with elegance and originality.",
       "photo": "assets/images/founders/founder-2.jpg"
     }
   ],
@@ -213,27 +213,19 @@ window.RM_MEDIA = {
     "haldi-entry": [
       {
         "title": "Video 1",
-        "live": false
+        "live": true
       },
       {
         "title": "Video 2",
-        "live": false
+        "live": true
       },
       {
         "title": "Video 3",
-        "live": false
+        "live": true
       },
       {
         "title": "Video 4",
-        "live": false
-      },
-      {
-        "title": "Video 5",
-        "live": false
-      },
-      {
-        "title": "Video 6",
-        "live": false
+        "live": true
       }
     ],
     "choreography": [

@@ -99,6 +99,24 @@
     return "https://wa.me/" + RM.config.whatsappNumber + "?text=" + encodeURIComponent(lines.join("\n"));
   }
 
+  /* Full enquiry as a WhatsApp message to the business number. */
+  function whatsappEnquiryLink(data) {
+    var lines = ["Hello R & M Entertainment Designers, I'd like to enquire.", "", "Name: " + data.name];
+    if (data.phone) { lines.push("Phone: " + data.phone); }
+    if (data.email) { lines.push("Email: " + data.email); }
+    lines.push("Preferred contact: " + data.pref);
+    lines.push("Event date: " + (data.date || "Not decided"));
+    if (data.city) { lines.push("City or venue: " + data.city); }
+    lines.push("Services: " + data.services.join(", "));
+    if (data.count) { lines.push("Participants: " + data.count); }
+    if (data.budget) { lines.push("Budget: " + data.budget); }
+    if (data.message) { lines.push("", data.message); }
+    return "https://wa.me/" + RM.config.whatsappNumber + "?text=" + encodeURIComponent(lines.join("\n"));
+  }
+
+  var viaWhatsApp = RM.config.sendVia === "whatsapp" && RM.config.whatsappNumber;
+  if (viaWhatsApp) { $("#submit-button").textContent = "Send Enquiry on WhatsApp"; }
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     if (submitting) { return; }
@@ -112,6 +130,20 @@
 
     var button = $("#submit-button");
     var result = $("#form-result");
+
+    // WhatsApp: open the chat now (still inside the click, so it is not blocked as a pop-up).
+    if (viaWhatsApp) {
+      var link = whatsappEnquiryLink(payload());
+      window.open(link, "_blank", "noopener");
+      var c = RM.config.contact;
+      result.className = "form-result";
+      result.innerHTML =
+        "<strong>WhatsApp has opened with your enquiry.</strong> Press send in WhatsApp to deliver it. This is not a booking confirmation." +
+        '<p><a class="btn btn--primary" href="' + link + '" target="_blank" rel="noopener">Open WhatsApp again</a>' +
+        (c.phone ? ' <a class="btn btn--outline" href="tel:' + c.phone + '">Call ' + RM.escape(c.phone) + "</a>" : "") + "</p>";
+      result.scrollIntoView({ block: "nearest" });
+      return;
+    }
     submitting = true;
     button.disabled = true;
     button.textContent = "Sending\u2026";
@@ -129,7 +161,8 @@
             return r.json();
           })
           .then(function (body) {
-            if (String(body.success) === "false") { throw new Error("failed"); }
+            // The service explains refusals (for example, first-time activation); pass that on.
+            if (String(body.success) === "false") { throw new Error(body.message || "failed"); }
           })
       : Promise.reject(new Error("not-connected"));
 
@@ -143,9 +176,12 @@
       })
       .catch(function (error) {
         result.className = "form-result form-result--warn";
+        var known = error.message === "failed" || error.message === "Failed to fetch";
         result.innerHTML = error.message === "not-connected"
           ? "<strong>Your enquiry has not been sent.</strong> Delivery isn\u2019t connected yet. Your answers are still in the form."
-          : "<strong>We couldn\u2019t send your enquiry.</strong> Check your connection and try again. Your answers are still in the form.";
+          : "<strong>We couldn\u2019t send your enquiry.</strong> " +
+            (known ? "Check your connection and try again." : RM.escape(error.message)) +
+            " Your answers are still in the form.";
       })
       .then(function () {
         submitting = false;
