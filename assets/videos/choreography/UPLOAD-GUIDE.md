@@ -1,6 +1,6 @@
 # Choreography: video upload guide
 
-Upload **six videos** into this folder, one per slot below.
+This section shows **7 videos** (`video-1.mp4` to `video-7.mp4`). To add more, add a slot for each in `assets/data/media-manifest.js`.
 
 | Slot | File name | What to upload | Poster image | Done |
 |------|-----------|----------------|--------------|------|

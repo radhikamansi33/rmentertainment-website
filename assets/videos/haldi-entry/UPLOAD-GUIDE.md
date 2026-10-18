@@ -1,6 +1,6 @@
 # Haldi & Mehndi Entry: video upload guide
 
-This section shows **four videos** (slots 1 to 4 below) for Haldi and Mehndi entries. To add more, add a slot for each in `assets/data/media-manifest.js`.
+This section shows **6 videos** (`video-1.mp4` to `video-6.mp4`). To add more, add a slot for each in `assets/data/media-manifest.js`.
 
 | Slot | File name | What to upload | Poster image | Done |
 |------|-----------|----------------|--------------|------|

@@ -1,6 +1,6 @@
 # Virtual Sessions: video upload guide
 
-This section shows **four videos**, one per slot below. To add more, add a slot for each in `assets/data/media-manifest.js`.
+This section shows **3 videos** (`video-1.mp4` to `video-3.mp4`). To add more, add a slot for each in `assets/data/media-manifest.js`.
 
 | Slot | File name | What to upload | Poster image | Done |
 |------|-----------|----------------|--------------|------|

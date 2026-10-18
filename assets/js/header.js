@@ -1,14 +1,10 @@
 /**
- * Header: dropdown menu, mobile menu, compact-on-scroll, and logo loading.
+ * Header: mobile menu, compact-on-scroll, and logo loading.
  */
 (function () {
   var $ = RM.$;
-  var dropdownButton = $("#dropdown-button");
-  var dropdownMenu = $("#dropdown-menu");
   var menuToggle = $("#menu-toggle");
   var mobileNav = $("#mobile-nav");
-  var mobileExperiences = $("#mobile-experiences");
-  var mobileSub = $("#mobile-sub");
 
   function setOpen(button, menu, open) {
     var next = open === undefined ? !menu.classList.contains("is-open") : open;
@@ -16,38 +12,10 @@
     button.setAttribute("aria-expanded", next);
   }
 
-  dropdownButton.addEventListener("click", function () {
-    setOpen(dropdownButton, dropdownMenu);
-  });
-
   menuToggle.addEventListener("click", function () {
     setOpen(menuToggle, mobileNav);
   });
 
-  mobileExperiences.addEventListener("click", function () {
-    setOpen(mobileExperiences, mobileSub);
-    var open = mobileSub.classList.contains("is-open");
-    mobileExperiences.textContent = "Experiences " + (open ? "\u2212" : "+");
-  });
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && dropdownMenu.classList.contains("is-open")) {
-      setOpen(dropdownButton, dropdownMenu, false);
-      dropdownButton.focus();
-    }
-  });
-
-  document.addEventListener("click", function (event) {
-    if (!event.target.closest(".nav__item--dropdown")) {
-      setOpen(dropdownButton, dropdownMenu, false);
-    }
-  });
-
-  dropdownMenu.addEventListener("focusout", function (event) {
-    if (!dropdownMenu.parentNode.contains(event.relatedTarget)) {
-      setOpen(dropdownButton, dropdownMenu, false);
-    }
-  });
 
   // Header WhatsApp and Call buttons: with several founders, a pop-up asks whom to contact.
   var team = RM.config.team || [];
