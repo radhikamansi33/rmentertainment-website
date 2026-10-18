@@ -29,14 +29,14 @@ window.RM_MEDIA = {
   "founders": [
     {
       "name": "Radhika Pancholi",
-      "role": "Professional dancer",
+      "role": "Professional choreographer",
       "bio": "With a decade of experience in dance, Radhika brings an artistic and performance-led approach to entertainment design. She specialises in conceptualising signature entries, developing creative performance concepts, and curating distinctive entertainment experiences for weddings and celebrations. Her focus is on transforming ideas into thoughtfully designed, visually engaging, and memorable experiences.",
       "photo": "assets/images/founders/founder-1.jpg"
     },
     {
       "name": "Mansi Rawat",
-      "role": "Professional dancer",
-      "bio": "Mansi is a professional dancer with over five years of experience in the wedding and entertainment industry. With a passion for creativity and storytelling, she specializes in conceptualizing and curating unique wedding experiences, from choreographies and grand entries to personalized entertainment concepts. Her creative vision and attention to detail bring every idea to life with elegance and originality.",
+      "role": "Professional choreographer",
+      "bio": "Mansi is a professional choreographer with over five years of experience in the wedding and entertainment industry. With a passion for creativity and storytelling, she specializes in conceptualizing and curating unique wedding experiences, from choreographies and grand entries to personalized entertainment concepts. Her creative vision and attention to detail bring every idea to life with elegance and originality.",
       "photo": "assets/images/founders/founder-2.jpg"
     }
   ],
@@ -51,7 +51,30 @@ window.RM_MEDIA = {
     {"src": "assets/images/gallery/special-artists-08.jpg", "alt": "Punjabi folk performers in colourful turbans", "section": "special-artists"},
     {"src": "assets/images/gallery/special-artists-09.jpg", "alt": "Statue-style artist in a teal tulle gown", "section": "special-artists"},
     {"src": "assets/images/gallery/special-artists-10.jpg", "alt": "Performers in red feathered costumes", "section": "special-artists"},
-    {"src": "assets/images/gallery/special-artists-11.jpg", "alt": "Jester-themed costume performers", "section": "special-artists"}
+    {"src": "assets/images/gallery/special-artists-11.jpg", "alt": "Jester-themed costume performers", "section": "special-artists"},
+    {"src": "assets/images/gallery/technical-rehearsals-01.jpg", "alt": "Stage run-through with a lift and dancers at an outdoor venue", "section": "technical-rehearsals"},
+    {"src": "assets/images/gallery/client-feedback-01.jpg", "alt": "A family celebrating together with the R & M team", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-02.jpg", "alt": "Guests greeting each other at a daytime celebration", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-03.jpg", "alt": "Family members sharing a hug at the celebration", "section": "client-feedback"}
+,
+    {"src": "assets/images/gallery/client-feedback-04.jpg", "alt": "Bride and groom at a palace wedding ceremony", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-05.jpg", "alt": "Bride smiling behind the groom", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-06.jpg", "alt": "Bride in red lehenga and gold jewellery", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-07.jpg", "alt": "Bride walking in under a floral canopy", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-08.jpg", "alt": "Couple portrait in black and white", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-09.jpg", "alt": "Couple in matching embroidered jackets", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-10.jpg", "alt": "Couple sharing a playful moment", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-11.jpg", "alt": "Couple walking through an archway at night", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-12.jpg", "alt": "Family laughing together in black and white", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-13.jpg", "alt": "Couple under chandeliers", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-14.jpg", "alt": "Couple touching foreheads at their wedding", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-15.jpg", "alt": "Bride seated in a spread lehenga", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-16.jpg", "alt": "Couple in a close embrace", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-17.jpg", "alt": "Couple dancing on a lit stage", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-18.jpg", "alt": "Couple walking down a floral aisle", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-19.jpg", "alt": "Groom with cold fireworks", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-20.jpg", "alt": "Venue lit up with fireworks", "section": "client-feedback"},
+    {"src": "assets/images/gallery/client-feedback-21.jpg", "alt": "Couple celebrating on stage with garlands", "section": "client-feedback"}
   ],
   "sections": {
     "home": [
@@ -208,6 +231,10 @@ window.RM_MEDIA = {
       {
         "title": "Video 6",
         "live": true
+      },
+      {
+        "title": "Video 7",
+        "live": true
       }
     ],
     "haldi-entry": [
@@ -225,6 +252,14 @@ window.RM_MEDIA = {
       },
       {
         "title": "Video 4",
+        "live": true
+      },
+      {
+        "title": "Video 5",
+        "live": true
+      },
+      {
+        "title": "Video 6",
         "live": true
       }
     ],
@@ -251,6 +286,10 @@ window.RM_MEDIA = {
       },
       {
         "title": "Video 6",
+        "live": true
+      },
+      {
+        "title": "Video 7",
         "live": true
       }
     ],
@@ -280,10 +319,6 @@ window.RM_MEDIA = {
       {
         "title": "Video 3",
         "live": true
-      },
-      {
-        "title": "Video 4",
-        "live": true
       }
     ],
     "technical-rehearsals": [
@@ -310,6 +345,22 @@ window.RM_MEDIA = {
       {
         "title": "Video 6",
         "live": true
+      },
+      {
+        "title": "Video 7",
+        "live": true
+      },
+      {
+        "title": "Video 8",
+        "live": true
+      },
+      {
+        "title": "Video 9",
+        "live": true
+      },
+      {
+        "title": "Video 10",
+        "live": true
       }
     ],
     "rehearsals": [
@@ -335,6 +386,24 @@ window.RM_MEDIA = {
       },
       {
         "title": "Video 6",
+        "live": true
+      }
+    ],
+    "client-feedback": [
+      {
+        "title": "From “I can’t dance” to “I actually did it”",
+        "live": true
+      },
+      {
+        "title": "When our work turns into someone’s favourite memory",
+        "live": true
+      },
+      {
+        "title": "A guest shares her experience",
+        "live": true
+      },
+      {
+        "title": "All smiles after the celebration",
         "live": true
       }
     ]

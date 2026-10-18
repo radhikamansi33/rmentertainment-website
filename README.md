@@ -40,6 +40,6 @@ choreography, special-artists, virtual-sessions, technical-rehearsals.
 3. Open `/owner-checklist/` for the remaining launch items.
 
 ## After editing CSS or JS
-Every page loads its styles and scripts with a version tag, for example `layout.css?v=20261017f`.
+Every page loads its styles and scripts with a version tag, for example `layout.css?v=20261018l`.
 After changing any file in `assets/css/`, `assets/js/` or `assets/data/`, change that tag on all pages
-(a find-and-replace of `?v=20261017f` to a new value) so visitors' browsers fetch the new files instead of old cached copies.
+(a find-and-replace of `?v=20261018l` to a new value) so visitors' browsers fetch the new files instead of old cached copies.

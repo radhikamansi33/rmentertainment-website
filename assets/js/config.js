@@ -40,6 +40,7 @@ RM.config = {
     "special-artists": "Special Artists",
     "virtual-sessions": "Virtual Sessions",
     "technical-rehearsals": "Technical Rehearsals",
-    "rehearsals": "Rehearsals"
+    "rehearsals": "Rehearsals",
+    "client-feedback": "Client Feedback"
   }
 };

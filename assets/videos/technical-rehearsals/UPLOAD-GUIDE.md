@@ -1,6 +1,6 @@
 # Technical Rehearsals: video upload guide
 
-Upload **six videos** into this folder, one per slot below.
+This section shows **10 videos** (`video-1.mp4` to `video-10.mp4`). To add more, add a slot for each in `assets/data/media-manifest.js`. Photos for this page live in `assets/images/gallery/technical-rehearsals-*.jpg`.
 
 | Slot | File name | What to upload | Poster image | Done |
 |------|-----------|----------------|--------------|------|

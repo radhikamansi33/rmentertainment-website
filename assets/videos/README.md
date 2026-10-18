@@ -9,15 +9,16 @@ One folder per website section. Each folder has an `UPLOAD-GUIDE.md` that says e
 | Founders page | [`assets/videos/founders/`](founders/UPLOAD-GUIDE.md) | 6 |
 | Behind the Scenes | [`assets/videos/behind-the-scenes/`](behind-the-scenes/UPLOAD-GUIDE.md) | 6 |
 | Sangeet Entry | [`assets/videos/sangeet-entry/`](sangeet-entry/UPLOAD-GUIDE.md) | 6 |
-| Varmala Entry | [`assets/videos/varmala-entry/`](varmala-entry/UPLOAD-GUIDE.md) | 6 |
-| Haldi & Mehndi Entry | [`assets/videos/haldi-entry/`](haldi-entry/UPLOAD-GUIDE.md) | 4 |
-| Choreography | [`assets/videos/choreography/`](choreography/UPLOAD-GUIDE.md) | 6 |
+| Varmala Entry | [`assets/videos/varmala-entry/`](varmala-entry/UPLOAD-GUIDE.md) | 7 |
+| Haldi & Mehndi Entry | [`assets/videos/haldi-entry/`](haldi-entry/UPLOAD-GUIDE.md) | 6 |
+| Choreography | [`assets/videos/choreography/`](choreography/UPLOAD-GUIDE.md) | 7 |
 | Special Artists | [`assets/videos/special-artists/`](special-artists/UPLOAD-GUIDE.md) | 3 |
-| Virtual Sessions | [`assets/videos/virtual-sessions/`](virtual-sessions/UPLOAD-GUIDE.md) | 4 |
-| Technical Rehearsals | [`assets/videos/technical-rehearsals/`](technical-rehearsals/UPLOAD-GUIDE.md) | 6 |
+| Virtual Sessions | [`assets/videos/virtual-sessions/`](virtual-sessions/UPLOAD-GUIDE.md) | 3 |
+| Technical Rehearsals | [`assets/videos/technical-rehearsals/`](technical-rehearsals/UPLOAD-GUIDE.md) | 10 |
 | Rehearsals | [`assets/videos/rehearsals/`](rehearsals/UPLOAD-GUIDE.md) | 6 |
+| Client Feedback | [`assets/videos/client-feedback/`](client-feedback/UPLOAD-GUIDE.md) | 4 |
 
-**Total: 65 videos** (6 per section, 4 each for Virtual Sessions and Haldi & Mehndi, 3 for Special Artists).
+**Total: 76 videos** (the number per section is in the table above).
 
 ## Video requirements
 - Format: MP4 (H.264 video, AAC audio)
